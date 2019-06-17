@@ -7,6 +7,7 @@ Install [docker](https://hub.docker.com/) on your machine.
 
 ```bash
 # Build the Docker Image from the Dockerfile
+# -t: Name the resulting image.
 docker build -t jenkins-sfdx .
 
 # Run the Docker Image
