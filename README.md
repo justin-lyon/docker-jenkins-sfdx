@@ -1,5 +1,5 @@
 # docker-jenkins-sfdx
-> Dockerfile that adds sfdx-cli to the base [jenkins/jenkins:lts](https://hub.docker.com/r/jenkins/jenkins/) image.
+> Preconfigured Dockerized Jenkins, ready for SalesforceDX Jobs.
 
 ## Setup
 
@@ -14,8 +14,18 @@ docker build -t jenkins-sfdx .
 # --name: Names the resulting container
 # -p: opens port forwarding to the container
 # -v: establishes a volume
-docker run --name jenkins-poc -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jenkins-sfdx
+docker run --name jenkins-poc -p 8080:8080 -v jenkins-config:/var/jenkins_home jenkins-sfdx
 ```
+
+1. Open Jenkins UI at host:8080.
+1. Enter the Initial Admin Password provided by from the command line.
+1. Click "Select Plugins to Install"
+1. Click "None"
+1. Click "Install"
+1. Create your new admin user.
+1. Set your Jenkins URL.
+1. Click Save and Finish.
+1. Click Start Using Jenkins.
 
 ## Info
 The [jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins/) base image is a debian install and creates a jenkins user.
